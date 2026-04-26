@@ -2,7 +2,7 @@
         c-build c-test cpp-build cpp-test \
         fortran-build fortran-test julia-test rust-test \
         js-test octave-test \
-        validate figures clean help
+        validate figures clean sync-git help
 
 PYTHON = python3
 PIP    = pip3
@@ -27,6 +27,8 @@ help:
 	@echo "  figures           Generate documentation figures (PNG)"
 	@echo "  docs              Build MkDocs HTML documentation"
 	@echo "  clean             Remove build artefacts"
+	@echo "  sync-git          Stage, commit, and push to origin/master"
+	@echo "                    Optional: MSG=\"commit message\""
 
 install:
 	$(PIP) install -e "python/.[dev]"
@@ -110,3 +112,12 @@ clean:
 	rm -rf docs/_build site/
 	find . -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
 	find . -name "*.pyc" -delete 2>/dev/null || true
+
+# ── Git sync ──────────────────────────────────────────────────────────────
+## Usage:
+##   make sync-git                     # commit everything with auto message
+##   make sync-git MSG="your message"  # commit with a custom message
+sync-git:
+	git add -A
+	git diff --cached --quiet || git commit -m "$(if $(MSG),$(MSG),chore: sync local changes [$(shell date '+%Y-%m-%d %H:%M')])"
+	git push origin master
