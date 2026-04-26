@@ -1,0 +1,22 @@
+[package]
+name = "universalfft"
+version = "1.0.0"
+edition = "2021"
+authors = ["Shibaji Chakraborty <shibaji22@gmail.com>"]
+description = "Boteler (2012) compliant FFT/IFFT wrappers for geoscience"
+license = "MIT"
+repository = "https://github.com/shibaji7/UniversalFFT"
+
+[lib]
+name = "universalfft"
+path = "src/lib.rs"
+
+[[bin]]
+name = "ufft_demo"
+path = "src/main.rs"
+
+[dependencies]
+rustfft = "6"
+
+[dev-dependencies]
+approx = "0.5"

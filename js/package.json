@@ -1,0 +1,14 @@
+{
+  "name": "universalfft",
+  "version": "1.0.0",
+  "description": "Boteler (2012) compliant FFT/IFFT wrappers for JavaScript",
+  "type": "module",
+  "main": "universalfft.js",
+  "exports": "./universalfft.js",
+  "scripts": {
+    "demo": "node demo.js",
+    "test": "node --test test.js"
+  },
+  "keywords": ["fft", "ifft", "geoscience", "boteler", "signal-processing"],
+  "license": "MIT"
+}

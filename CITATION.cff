@@ -1,0 +1,63 @@
+cff-version: 1.2.0
+message: >
+  If you use UniversalFFT in your research, please cite it using the metadata below.
+title: "UniversalFFT: A multi-language FFT/IFFT wrapper library for physically correct geoscience Fourier transforms"
+authors:
+  - family-names: Chakraborty
+    given-names: Shibaji
+    affiliation: "Center for Space and Atmospheric Research, Embry-Riddle Aeronautical University"
+    orcid: "https://orcid.org/0000-0001-6792-0037"
+version: "1.0.0"
+doi: "10.5281/zenodo.XXXXXXX"
+date-released: 2026-04-25
+repository-code: "https://github.com/shibaji7/UniversalFFT"
+url: "https://universalfft.readthedocs.io/en/latest/"
+abstract: >
+  UniversalFFT is an open-source multi-language library (Python, C, MATLAB, R)
+  that implements the Fourier transform conventions described by Boteler (2012)
+  for physically correct geoscience applications. It provides two discrete
+  Fourier transform pairs — Continuous–Continuous and Continuous–Discrete —
+  ensuring that single-transform operations such as impulse-response recovery
+  and periodic-spectrum determination produce results consistent with the
+  Fourier integral, Parseval's theorem, and standard geoscience practice.
+license: "MIT"
+keywords:
+  - Fourier transform
+  - FFT
+  - geoscience
+  - signal processing
+  - geomagnetically induced currents
+  - magnetotellurics
+  - Python
+  - C
+  - MATLAB
+  - R
+  - multi-language
+contact:
+  - family-names: Chakraborty
+    given-names: Shibaji
+    affiliation: "Center for Space and Atmospheric Research, Embry-Riddle Aeronautical University"
+    orcid: "https://orcid.org/0000-0001-6792-0037"
+preferred-citation:
+  type: software
+  title: "UniversalFFT: A multi-language FFT/IFFT wrapper library for physically correct geoscience Fourier transforms"
+  authors:
+    - family-names: Chakraborty
+      given-names: Shibaji
+      orcid: "https://orcid.org/0000-0001-6792-0037"
+  version: "1.0.0"
+  doi: "10.5281/zenodo.XXXXXXX"
+  url: "https://github.com/shibaji7/UniversalFFT"
+references:
+  - type: article
+    title: "On Choosing Fourier Transforms for Practical Geoscience Applications"
+    authors:
+      - family-names: Boteler
+        given-names: David H.
+    journal: "International Journal of Geosciences"
+    year: 2012
+    volume: 3
+    start: 952
+    end: 959
+    doi: "10.4236/ijg.2012.325096"
+    url: "https://doi.org/10.4236/ijg.2012.325096"
