@@ -1,0 +1,16 @@
+<svg width="400" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+  <path d="M40 75 L60 30 L100 30 L120 75 L100 120 L60 120 Z" fill="#003366" opacity="0.1"/>
+  
+  <path d="M30 75 Q 55 10, 80 75 T 130 75" stroke="#00A896" stroke-width="6" fill="none" stroke-linecap="round">
+    <animate attributeName="stroke-dasharray" from="0,200" to="200,0" dur="3s" repeatCount="indefinite" />
+  </path>
+  
+  <circle cx="30" cy="75" r="3" fill="#003366" />
+  <circle cx="80" cy="75" r="3" fill="#003366" />
+  <circle cx="130" cy="75" r="3" fill="#003366" />
+
+  <text x="150" y="70" font-family="Courier, monospace" font-weight="bold" font-size="32" fill="#003366">Universal</text>
+  <text x="150" y="110" font-family="Georgia, serif" font-style="italic" font-size="45" fill="#00A896">FFT</text>
+  
+  <text x="155" y="130" font-family="Arial, sans-serif" font-size="10" fill="#666">11-LANGUAGE KERNEL</text>
+</svg>

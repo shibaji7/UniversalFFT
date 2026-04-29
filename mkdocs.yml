@@ -2,7 +2,7 @@ site_name: UniversalFFT Documentation
 repo_url: https://github.com/shibaji7/UniversalFFT
 theme:
   name: "material"
-  logo: assets/universalfft-logo.png
+  logo: assets/universalfft.svg
   features:
     - content.code.copy
     - content.code.select
