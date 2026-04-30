@@ -22,7 +22,7 @@ Author(s): Shibaji Chakraborty
 [![Documentation Status](https://img.shields.io/badge/docs-readthedocs-blue)](https://universalfft.readthedocs.io/en/latest/)
 [![codecov](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/shibaji7/UniversalFFT)
 
-Every FFT library makes silent choices about scaling factors and sign conventions. A `numpy.fft.ifft` and R's `fft(inverse=TRUE)` compute different things despite both calling themselves "inverse FFT". For a *pair* of transforms (FFT → process → IFFT) the scale factors cancel and you never notice. But for a *single* transform — recovering a filter's impulse response, or determining the discrete spectrum of a periodic waveform — the wrong convention gives a physically wrong result.
+Every FFT library makes silent choices about scaling factors and sign conventions. A `numpy.fft.ifft` and R's `fft(inverse=TRUE)` compute different things despite both calling themselves "inverse FFT". For a *pair* of transforms (FFT → process → IFFT) the scale factors cancel and you never notice. But for a *single* transform — recovering a filter's impulse response, or determining the discrete spectrum of a periodic waveform — an inconsistent convention silently mis-scales the result by a factor of N·Δt or N·Δf, an engineering error that is easy to miss and hard to trace back to a normalisation mismatch.
 
 UniversalFFT anchors every choice to the Fourier integral in frequency \(f\) (not \(\omega\)), following Boteler (2012), so that Parseval's theorem holds without any \(2\pi\) factor and the impulse response of a lowpass filter integrates to 1.
 
