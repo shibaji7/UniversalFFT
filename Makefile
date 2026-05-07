@@ -109,6 +109,7 @@ docs: install figures
 paper:
 	cd document && pdflatex softwarex_draft.tex
 	cd document && pdflatex softwarex_draft.tex
+	cd document && pandoc softwarex_draft.tex -o softwarex_draft.docx
 	cd document && rm -f *.aux *.log *.out *.toc *.bbl *.blg \
 	               *.fls *.fdb_latexmk *.synctex.gz *.synctex\(busy\)
 
