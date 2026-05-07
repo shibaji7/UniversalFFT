@@ -1,4 +1,4 @@
-.PHONY: all install test coverage docs reference-vectors \
+.PHONY: all install test coverage docs paper reference-vectors \
         c-build c-test cpp-build cpp-test \
         fortran-build fortran-test julia-test rust-test \
         js-test octave-test \
@@ -26,6 +26,7 @@ help:
 	@echo "  validate          Run cross-language validation (after demos)"
 	@echo "  figures           Generate documentation figures (PNG)"
 	@echo "  docs              Build MkDocs HTML documentation"
+	@echo "  paper             Compile document/softwarex_draft.pdf via pdflatex"
 	@echo "  clean             Remove build artefacts"
 	@echo "  sync-git          Stage, commit, and push to origin/master"
 	@echo "                    Optional: MSG=\"commit message\""
@@ -104,12 +105,21 @@ docs: install figures
 	pip install -q -r docs/requirements.txt
 	mkdocs build --strict
 
+# ── Paper (SoftwareX draft) ───────────────────────────────────────────────────
+paper:
+	cd document && pdflatex softwarex_draft.tex
+	cd document && pdflatex softwarex_draft.tex
+	cd document && rm -f *.aux *.log *.out *.toc *.bbl *.blg \
+	               *.fls *.fdb_latexmk *.synctex.gz *.synctex\(busy\)
+
 clean:
 	$(MAKE) -C c clean
 	$(MAKE) -C cpp clean
 	$(MAKE) -C fortran clean
 	rm -rf htmlcov .coverage coverage.xml
 	rm -rf docs/_build site/
+	cd document && rm -f *.aux *.log *.out *.toc *.bbl *.blg \
+	               *.fls *.fdb_latexmk *.synctex.gz *.synctex\(busy\) 2>/dev/null || true
 	find . -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
 	find . -name "*.pyc" -delete 2>/dev/null || true
 
